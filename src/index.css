@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-brand-purple: #00f2ff;
+  --color-brand-pink: #7000ff;
+  --color-neon-blue: #00f2ff;
+  --color-light-blue: #3b82f6;
+  --color-dark-blue: #1e3a8a;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 242, 255, 0.2);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 255, 0.5);
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300 antialiased selection:bg-neon-blue/30 selection:text-white bg-slate-50 text-slate-900;
+  }
+  
+  .dark body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-light-blue to-dark-blue;
+  }
+  
+  .glass-card {
+    @apply bg-white border border-slate-200 backdrop-blur-md rounded-2xl transition-all shadow-sm;
+  }
+
+  .dark .glass-card {
+    @apply bg-dark-blue/10 border border-neon-blue/10 backdrop-blur-xl;
+  }
+}

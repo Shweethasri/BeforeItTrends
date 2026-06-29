@@ -1,0 +1,6 @@
+{
+  "name": "Before It Trends",
+  "description": "AI-powered social media trend forecasting and content toolkit to find virality before it peaks.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
